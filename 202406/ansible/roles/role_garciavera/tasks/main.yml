@@ -1,0 +1,46 @@
+---
+- name: Crear directorio /tmp/2do_parcial
+  file:
+    path: "/tmp/2do_parcial"
+    state: directory
+    mode: '0755'
+
+- name: Crear subdirectorio dentro de /tmp/2do_parcial
+  file:
+    path: "/tmp/2do_parcial/alumno"
+    state: directory
+    mode: '0755'
+
+- name: Crear subdirectorio dentro de /tmp/2do_parcial
+  file:
+    path: "/tmp/2do_parcial/equipo"
+    state: directory
+    mode: '0755'
+
+- name: Generar datos_alumno.txt
+  template:
+    src: datos_alumno.txt.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+    mode: '0644'
+  vars:
+    alumno_nombre: "Nahuel"
+    alumno_apellido: "Garcia Vera"
+    division: "311"
+
+- name: Generar datos_equipo.txt
+  template:
+    src: datos_equipo.txt.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+    mode: '0644'
+  vars:
+    ip_address: "{{ ansible_default_ipv4.address }}"
+    distribucion: "{{ ansible_distribution }} {{ ansible_distribution_version }}"
+    cores: "{{ ansible_processor_cores[0] }}"
+
+- name: Configurar sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: '^%2PSupervisores'
+    line: '%2PSupervisores ALL=(ALL) NOPASSWD: ALL'
+    validate: '/usr/sbin/visudo -cf %s'
+

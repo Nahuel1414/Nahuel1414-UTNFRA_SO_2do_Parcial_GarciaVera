@@ -1,0 +1,46 @@
+2024-06-24 18:08:06,499 p=3444395 u=upszot n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-06-24 18:08:06,598 p=3444395 u=upszot n=ansible | PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:06,609 p=3444395 u=upszot n=ansible | TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,746 p=3444395 u=upszot n=ansible | ok: [localhost]
+2024-06-24 18:08:07,775 p=3444395 u=upszot n=ansible | TASK [include_role : 2do_parcial] ***********************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,805 p=3444395 u=upszot n=ansible | TASK [2do_parcial : debug] ******************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,817 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-06-24 18:08:07,836 p=3444395 u=upszot n=ansible | TASK [Otra tarea] ***************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,851 p=3444395 u=upszot n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-18 21:11:53,081 p=14721 u=garciavera n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-11-18 21:11:53,088 p=14721 u=garciavera n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2024-11-18 21:11:53,323 p=14721 u=garciavera n=ansible | PLAY [all] ************************************************************************************************************************************************************************************
+2024-11-18 21:11:53,323 p=14721 u=garciavera n=ansible | skipping: no hosts matched
+2024-11-18 21:11:53,324 p=14721 u=garciavera n=ansible | PLAY [Generar archivos y configurar sudoers] **************************************************************************************************************************************************
+2024-11-18 21:11:53,324 p=14721 u=garciavera n=ansible | skipping: no hosts matched
+2024-11-18 21:11:53,325 p=14721 u=garciavera n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-11-18 21:16:11,522 p=14895 u=garciavera n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-11-18 21:16:11,633 p=14895 u=garciavera n=ansible | PLAY [all] ************************************************************************************************************************************************************************************
+2024-11-18 21:16:11,682 p=14895 u=garciavera n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************
+2024-11-18 21:16:11,794 p=14895 u=garciavera n=ansible | fatal: [127.0.0.1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '127.0.0.1' (ED25519) to the list of known hosts.\r\ngarciavera@127.0.0.1: Permission denied (publickey).", "unreachable": true}
+2024-11-18 21:16:13,155 p=14895 u=garciavera n=ansible | ok: [localhost]
+2024-11-18 21:16:13,167 p=14895 u=garciavera n=ansible | TASK [include_role : 2do_parcial] *************************************************************************************************************************************************************
+2024-11-18 21:16:13,216 p=14895 u=garciavera n=ansible | TASK [2do_parcial : debug] ********************************************************************************************************************************************************************
+2024-11-18 21:16:13,226 p=14895 u=garciavera n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-11-18 21:16:13,234 p=14895 u=garciavera n=ansible | TASK [Otra tarea] *****************************************************************************************************************************************************************************
+2024-11-18 21:16:13,244 p=14895 u=garciavera n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-18 21:16:13,258 p=14895 u=garciavera n=ansible | PLAY [Generar archivos y configurar sudoers] **************************************************************************************************************************************************
+2024-11-18 21:16:13,266 p=14895 u=garciavera n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************************
+2024-11-18 21:16:13,321 p=14895 u=garciavera n=ansible | fatal: [localhost]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"failed": true, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+2024-11-18 21:16:13,322 p=14895 u=garciavera n=ansible | PLAY RECAP ************************************************************************************************************************************************************************************
+2024-11-18 21:16:13,323 p=14895 u=garciavera n=ansible | 127.0.0.1                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-18 21:16:13,323 p=14895 u=garciavera n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
